@@ -1,0 +1,108 @@
+Database name => inventory
+------------------------------------------------------------------------------------
+Tables
+
+1. dealer_info
+
+CREATE TABLE [dbo].[dealer_info] (
+    [id]                  INT           IDENTITY (1, 1) NOT NULL,
+    [dealer_name]         VARCHAR (50)  NULL,
+    [dealer_company_name] VARCHAR (50)  NULL,
+    [contact]             VARCHAR (50)  NULL,
+    [address]             VARCHAR (MAX) NULL,
+    [city]                VARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+2.order_item
+
+CREATE TABLE [dbo].[order_item] (
+    [id]       INT          IDENTITY (1, 1) NOT NULL,
+    [order_id] VARCHAR (50) NULL,
+    [product]  VARCHAR (50) NULL,
+    [price]    VARCHAR (50) NULL,
+    [qty]      VARCHAR (50) NULL,
+    [total]    VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+3.order_user
+
+CREATE TABLE [dbo].[order_user] (
+    [id]            INT          IDENTITY (1, 1) NOT NULL,
+    [firstname]     VARCHAR (50) NULL,
+    [lastname]      VARCHAR (50) NULL,
+    [billtype]      VARCHAR (50) NULL,
+    [purchase_date] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+
+4.product_name
+
+CREATE TABLE [dbo].[product_name] (
+    [id]           INT          IDENTITY (1, 1) NOT NULL,
+    [product_name] VARCHAR (50) NULL,
+    [units]        VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+5.purchase_master
+
+CREATE TABLE [dbo].[purchase_master] (
+    [id]                  INT          IDENTITY (1, 1) NOT NULL,
+    [product_name]        VARCHAR (50) NULL,
+    [product_qty]         VARCHAR (50) NULL,
+    [product_unit]        VARCHAR (50) NULL,
+    [product_price]       VARCHAR (50) NULL,
+    [product_total]       VARCHAR (50) NULL,
+    [purchase_date]       VARCHAR (50) NULL,
+    [purchase_party_name] VARCHAR (50) NULL,
+    [purchase_type]       VARCHAR (50) NULL,
+    [expiry_date]         VARCHAR (50) NULL,
+    [profit]              VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+6.registration
+
+CREATE TABLE [dbo].[registration] (
+    [id]        INT          IDENTITY (1, 1) NOT NULL,
+    [firstname] VARCHAR (50) NULL,
+    [lastname]  VARCHAR (50) NULL,
+    [username]  VARCHAR (50) NULL,
+    [password]  VARCHAR (50) NULL,
+    [email]     VARCHAR (50) NULL,
+    [contact]   VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+7.stock
+
+CREATE TABLE [dbo].[stock] (
+    [id]           INT          IDENTITY (1, 1) NOT NULL,
+    [product_name] VARCHAR (50) NULL,
+    [product_qty]  NCHAR (10)   NULL,
+    [product_unit] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+
+8.units
+
+CREATE TABLE [dbo].[units] (
+    [id]   INT          IDENTITY (1, 1) NOT NULL,
+    [unit] VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+
+
+
